@@ -1,0 +1,27 @@
+<html>
+    <h1>
+        Ingrese su usuario
+    </h1>
+
+    <form action="." method="post">
+		{% csrf_token %}
+		
+		<hr>
+		<!-- {{errors}} -->
+		<div>
+			<label>Nombre</label>
+			<input type="text" name="first_name" {%if person %} value="{{person.first_name}}" {% endif %} required>
+		</div>
+		<div>
+			<label>Apellidos</label>
+			<input type="text" name="last_name" {%if person %} value="{{person.last_name}}" {% endif %} required>
+		</div>
+		<div>
+			<label>Correo</label>
+			<input type="email" name="email" {%if person %} value="{{person.email}}" {% endif %} required>
+		</div>
+		<div>
+			<button type="submit">Enviar</button>
+		</div>
+	</form>
+</html>

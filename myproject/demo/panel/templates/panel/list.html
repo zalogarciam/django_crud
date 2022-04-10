@@ -1,0 +1,6 @@
+<h1>lista de personas</h1>
+	<ul>
+		{% for p in persons %}
+		<li>{{p.first_name}} - {{p.last_name}} - {{p.email}} - <a href="{% url 'panel:edit' p.pk %}">Editar</a> <a href="{% url 'panel:delete' p.pk %}">Eliminar</a> </li>
+		{% endfor %}		
+	</ul>
